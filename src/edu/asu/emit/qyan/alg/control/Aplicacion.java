@@ -17,7 +17,7 @@ import edu.asu.emit.qyan.alg.model.VariableGraph;
 
 public class Aplicacion {
 	public static ArrayList<String[]> caminos = new ArrayList<>();
-	public static VariableGraph graph = new VariableGraph("data/test_16");
+	public static VariableGraph graph = new VariableGraph("data/test_8");
 	public static int id = 1;
 
 	public static void main(String[] args) throws InterruptedException, IOException {	
@@ -30,32 +30,56 @@ public class Aplicacion {
 		leerArchivoCaminos();
 
 		// Matriz que representa la red igual al archivo test_16 que se va a utilar al tener los caminos.
-		int[] vertices = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+		int[] vertices = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 		GrafoMatriz g = new GrafoMatriz(vertices);
 		g.InicializarGrafo(g.grafo);
 
-		g.agregarRuta(1 ,6 ,1, 3, 200);
-		g.agregarRuta(1 ,7 ,1, 3, 200);
-		g.agregarRuta(1 ,8 ,1, 3, 200);
-		g.agregarRuta(2 ,3 ,1, 3, 200);
-		g.agregarRuta(2 ,5 ,1, 3, 200);
-		g.agregarRuta(2 ,6 ,1, 3, 200);
-		g.agregarRuta(3 ,5 ,1, 3, 200);
-		g.agregarRuta(3 ,8 ,1, 3, 200);
-		g.agregarRuta(4 ,5 ,1, 3, 200);
-		g.agregarRuta(4 ,6 ,1, 3, 200);
-		g.agregarRuta(6 ,13 ,1, 3, 200);
-		g.agregarRuta(7 ,10 ,1, 3, 200);
-		g.agregarRuta(7 ,14 ,1, 3, 200);
-		g.agregarRuta(8 ,9 ,1, 3, 200);
-		g.agregarRuta(8 ,15 ,1, 3, 200);
-		g.agregarRuta(9 ,10 ,1, 3, 200);
-		g.agregarRuta(9 ,12 ,1, 3, 200);
-		g.agregarRuta(9 ,15 ,1, 3, 200);
-		g.agregarRuta(10 ,12 ,1, 3, 200);
-		g.agregarRuta(11 ,13 ,1, 3, 200);
-		g.agregarRuta(11 ,14 ,1, 3, 200);
-		g.agregarRuta(13 ,14 ,1, 3, 200);
+		g.agregarRuta(0, 1, 1, 3, 200);
+		g.agregarRuta(2,6, 1, 3, 200);
+		g.agregarRuta(2, 8, 1, 3, 200);
+		g.agregarRuta(2, 9, 1, 3, 200);
+		g.agregarRuta(4, 3, 1, 3, 200);
+		g.agregarRuta(5, 3, 1, 3, 200);
+		g.agregarRuta(5, 4, 1, 3, 200);
+		g.agregarRuta(5, 6, 1, 3, 200);
+		g.agregarRuta(5, 7, 1, 3, 200);
+		g.agregarRuta(7, 6, 1, 3, 200);
+		g.agregarRuta(7, 8, 1, 3, 200);
+		g.agregarRuta(9, 11, 1, 3, 200);
+		g.agregarRuta(10, 9, 1, 3, 200);
+		g.agregarRuta(10, 11, 1, 3, 200);
+		g.agregarRuta(12, 13, 1, 3, 200);
+		g.agregarRuta(14, 8, 1, 3, 200);
+		g.agregarRuta(14, 10, 1, 3, 200);
+		g.agregarRuta(14, 12, 1, 3, 200);
+		g.agregarRuta(14, 13, 1, 3, 200);
+		g.agregarRuta(14, 15,1, 3, 200);
+		g.agregarRuta(14, 17, 1, 3, 200);
+		g.agregarRuta(14, 19, 1, 3, 200);
+		g.agregarRuta(14, 20, 1, 3, 200);
+		g.agregarRuta(14, 21, 1, 3, 200);
+		g.agregarRuta(14, 24, 1, 3, 200);
+		g.agregarRuta(15, 8, 1, 3, 200);
+		g.agregarRuta(15, 9, 1, 3, 200);
+		g.agregarRuta(15, 10, 1, 3, 200);
+		g.agregarRuta(15, 11, 1, 3, 200);
+		g.agregarRuta(16, 9, 1, 3, 200);
+		g.agregarRuta(16, 15, 1, 3, 200);
+		g.agregarRuta(17, 18, 1, 3, 200);
+		g.agregarRuta(19, 18, 1, 3, 200);
+		g.agregarRuta(19, 20, 1, 3, 200);
+		g.agregarRuta(19, 23, 1, 3, 200);
+		g.agregarRuta(21, 8, 1, 3, 200);
+		g.agregarRuta(21, 19, 1, 3, 200);
+		g.agregarRuta(21, 22, 1, 3, 200);
+		g.agregarRuta(21, 23, 1, 3, 200);
+		g.agregarRuta(23, 22, 1, 3, 200);
+		g.agregarRuta(24, 0, 1, 3, 200);
+		g.agregarRuta(24, 1, 1, 3, 200);
+		g.agregarRuta(24, 2, 1, 3, 200);
+		g.agregarRuta(24, 3, 1, 3, 200);
+		g.agregarRuta(24, 8, 1, 3, 200);
 
 
 
@@ -64,7 +88,7 @@ public class Aplicacion {
 		int contSemiBloqueoTotal = 0;
 		for(int w = 1; w <= 100; w++) {
 			//			System.out.println("w:" + w);
-			System.out.println("solicitud numero:" + "data/solicitudes" + w);
+//			System.out.println("solicitud numero:" + "data/solicitudes" + w);
 			FileReader input = new FileReader("data/solicitudes" + w);
 			BufferedReader bufRead = new BufferedReader(input);
 			String linea = bufRead.readLine();
@@ -129,7 +153,7 @@ public class Aplicacion {
 				}
 				// una vez ordenado la solicitud de entrada se le asigna a la primera abeja.
 				// luego se realiza un reordenamiento y se le asigna a las demás abejas.
-				int nroAbeja = 10;
+				int nroAbeja = 3;
 				List<Abeja> listaAbejas = new ArrayList();
 				AsignacionDemanda asig = new AsignacionDemanda(solicitudes, nroAbeja, g);
 				if(w == 1) {
@@ -318,10 +342,10 @@ public class Aplicacion {
 					aux.add(nuevaPoblacion.getDemandas().get(l));
 				}
 
-				for(int a = 0; a < listaNuevasAbejas.size(); a++) {
-					System.out.println("abejas: " + listaNuevasAbejas.get(a));
-
-				}
+//				for(int a = 0; a < listaNuevasAbejas.size(); a++) {
+//					System.out.println("abejas: " + listaNuevasAbejas.get(a));
+//
+//				}
 
 				for(int a = 0; a < listaNuevasAbejas.size(); a++) {
 					listaNuevasAbejas.get(a).getG().restar();
@@ -339,12 +363,12 @@ public class Aplicacion {
 
 			float entropia = contadorDeEntropia(resultadoFinal)/22;
 
-			System.out.println("############# t" + w);
+//			System.out.println("############# t" + w);
 			//			System.out.println("Cantidad de conexiones entrantes :" + contlineatxt);
 
-			System.out.println("La mejor opción la tiene la abeja: " + resultadoFinal.getId() + " indice: " + resultadoFinal.getFuncionObjetivo()/200
-					+ " bloqueos: " + resultadoFinal.getContadorBloqueo() + " bloqueoPorTiempo: " + resultadoFinal.getBloqueoPorTiempo()
-					+ " semiBloqueo: " + resultadoFinal.getSemibloqueo() + " ContadorEntropia: " + entropia);     
+			System.out.println("t" + w + " " + resultadoFinal.getFuncionObjetivo()/200
+					+ " t" + w + " " + resultadoFinal.getContadorBloqueo() + " t" + w + " " + resultadoFinal.getBloqueoPorTiempo()
+					+ " t" + w + " " + resultadoFinal.getSemibloqueo() + " t" + w + " " + entropia);     
 		}
 	}
 
@@ -407,8 +431,8 @@ public class Aplicacion {
 		PrintWriter writer = new PrintWriter("data/Kcaminos", "UTF-8");
 
 		// en este for hay que poner la cantidad de vertices que tenemos
-		for (int i = 0; i <= 15; i++) {
-			for (int k = 0; k <= 15; k++) {
+		for (int i = 0; i <= 24; i++) {
+			for (int k = 0; k <= 24; k++) {
 				if (i != k) {
 					List<Path> shortest_paths_list = yenAlg.get_shortest_paths(graph.get_vertex(i), graph.get_vertex(k), 5);
 					List<Path> shortest_paths_list2 = yenAlg.get_shortest_paths(graph.get_vertex(k), graph.get_vertex(i), 5);
@@ -476,13 +500,13 @@ public class Aplicacion {
 		      e.printStackTrace();
 		   }
 		   for (int i = 1; i <= 50; i++) {
-		      int origen = (int) (Math.random() * (15) + 1);
-		      int destino = (int) (Math.random() * (15) + 1);
+		      int origen = (int) (Math.random() * (24) + 1);
+		      int destino = (int) (Math.random() * (24) + 1);
 		      int fs = 1 + (int) (Math.random() * (10 - 1) + 1);
 		      int tiempo = 1 + (int) (Math.random() * (10) + 1);
 		      if (origen == destino) {
 		         while (origen == destino) {
-		            destino = (int) (Math.random() * (15) + 1);
+		            destino = (int) (Math.random() * (24) + 1);
 		         }
 		      }
 
