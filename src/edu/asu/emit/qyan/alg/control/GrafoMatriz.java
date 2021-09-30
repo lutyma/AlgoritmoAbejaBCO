@@ -87,6 +87,7 @@ public class GrafoMatriz {
 	}
 
 	public boolean verificar_conexion(int origen, Integer id, int cantfs) {
+		//System.out.println("entro verificar" + " origen " +origen + " id " + id + "cantfs " + cantfs  );
 
 		int i;
 		int long_grafo = this.grafo.length;
@@ -231,6 +232,8 @@ public class GrafoMatriz {
 					break;
 				}
 			}
+			
+			break;
 		}
 
 		/**

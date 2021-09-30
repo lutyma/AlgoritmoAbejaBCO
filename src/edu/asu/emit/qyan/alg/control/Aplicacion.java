@@ -230,7 +230,7 @@ public class Aplicacion {
 							if(ban) {		
 //								System.out.println("inicio: " + inicio + "id: " + id + "fs: " + fs);
 								boolean reasignar = abe.getG().verificar_conexion(inicio, id, fs);
-								//								System.out.println("no salio de verificar");
+												//				System.out.println("no salio de verificar");
 								if (!reasignar) {
 
 									contSemiBloqueoTotal++;
